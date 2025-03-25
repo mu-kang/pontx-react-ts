@@ -1,0 +1,41 @@
+import { useService, service } from "@/utils/service";
+import { SWRConfiguration } from "swr";
+import { defs } from "./defs";
+
+
+export namespace <%- name %> {
+  <% for (let i = 0; i < content.length; i++) { %>
+  /**
+   * @title <%- content[i].title %>
+   * @path <%- content[i].path %>
+   * @method <%- content[i].method %>
+   **/
+  export namespace <%- content[i].namespace %> {
+    <%- content[i].params %>
+    <%- content[i].body %>
+    <%- content[i].response %>
+    <% if (content[i].path.includes('${')) { %>export const path=(params:Params)=>`<%- content[i].path %>`<% }else{ %>export const path = "<%- content[i].path %>"<% } %>;
+    export function request(<% if (content[i].params) { %>params: Params ,<% } %><% if (content[i].body) { %>data: Body ,<% } %>) {
+      return service<Response>({
+        url: `<%- content[i].path %>`,
+        method: "<%- content[i].method %>",
+        <% if (content[i].params) { %>params,<% } %>
+        <% if (content[i].body) { %>data,<% } %>
+      });
+    }
+    export function useRequest(<% if (content[i].params) { %>params: Params ,<% } %><% if (content[i].body) { %>data: Body ,<% } %>options: SWRConfiguration | null) {
+      return useService<Response>(
+        {
+          url: `<%- content[i].path %>`,
+          method: "<%- content[i].method %>",
+          <% if (content[i].params) { %>params,<% } %>
+          <% if (content[i].body) { %>data,<% } %>
+        },
+        options
+      );
+    }
+  }
+  <% } %>
+  
+ 
+}

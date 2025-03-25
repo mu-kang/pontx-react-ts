@@ -1,0 +1,55 @@
+{
+  "name": "pontx-react-ts",
+  "version": "0.0.1",
+  "description": "pontx-react-ts",
+  
+  "files": [
+    "lib",
+    "template",
+    "package.json",
+    "LICENSE",
+    "*.md"
+  ],
+  "author": "mu-kang",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mu-kang/pontx-react-ts.git"
+  },
+  "keywords": [
+    "pontx",
+    "pontxjs",
+    "pontx-cli",
+    "swagger",
+    "pontx-react"
+  ],
+
+  "bugs": {
+    "url": "https://github.com/mu-kang/pontx-react-ts/issues"
+  },
+  "homepage": "https://github.com/mu-kang/pontx-react-ts#readme",
+  "scripts": {
+    "dev": "tsc --build --watch",
+    "clean": "rimraf lib && rimraf tsconfig.tsbuildinfo",
+    "build": "npm run clean && tsc --build"
+  },
+  "devDependencies": {
+    "@types/ejs": "^3.1.5",
+    "@types/fs-extra": "^11.0.4",
+    "@types/lodash": "^4.17.16",
+    "@types/node": "^22.10.2",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.8.2"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "lodash": "^4.17.21"
+  },
+  "peerDependencies": {
+    "fs-extra": "^10.1.0",
+    "pontx-generate": "*",
+    "pontx-manager": "*"
+  }
+}

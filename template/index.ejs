@@ -1,0 +1,7 @@
+<% for (let i = 0; i < names.length; i++) { %>import { <%= names[i] %> } from './<%= names[i] %>/api';
+<% } %>
+
+export default {
+  <% for (let i = 0; i < names.length; i++) { %><%= names[i] %>,
+  <% } %>
+}

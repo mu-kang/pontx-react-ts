@@ -1,0 +1,40 @@
+{
+	"compilerOptions": {
+		// 指定ECMAScript的目标版本
+		"target": "ES2020",
+		// 设置模块系统
+		"module": "commonjs",
+		// 指定输出目录
+		"outDir": "./lib",
+		// 是否启用严格模式
+		"strict": true,
+		// 允许从没有声明文件的模块导入
+		"allowSyntheticDefaultImports": true,
+		// 解析非相对模块名的方式
+		"moduleResolution": "node",
+		// 启用装饰器
+		"experimentalDecorators": true,
+		// 生成source map文件
+		"sourceMap": false,
+		// 定义库文件
+		"lib": [
+			"es2020"
+		],
+		// 指定根目录下的类型定义文件
+		"typeRoots": [
+			"./types",
+			"./node_modules/@types"
+		],
+		"declaration": true,
+		"resolveJsonModule": true,
+		// 跳过未使用的参数错误
+		"skipLibCheck": true
+	},
+	"include": [
+		"src/**/*",
+		"src/**/*.json"
+	],
+	"exclude": [
+		"node_modules"
+	]
+}
