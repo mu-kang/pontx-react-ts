@@ -1,12 +1,13 @@
 # pontx-react-ts
 
-本项目是根据 [pontx](https://github.com/pontjs/pontx/blob/main/README.md) 生成react API请求服务，方便大家使用。
+本插件是根据 [pontx](https://github.com/pontjs/pontx/blob/main/README.md) 结合 react 请求库 `swr` 生成react API请求服务，方便大家使用。
 
-## 使用方式 
+## 使用方式
 
-1. 执行 `npm install pontx-react-ts`
+1. 执行 `npm install pontx-react-ts -D`
 
 2. 在 `pontx-config.json`中新增`"generate":"pontx-react-ts"`
+
 ```json
 {
   "outDir": "../src/pontx-services",
@@ -30,4 +31,5 @@
   }]
 }
 ```
+
 3. 在根目录 新增`utils/service.ts` 可参考当前插件目录中 `./template/service.ts`
